@@ -110,22 +110,23 @@ class App extends Component {
         <XYPlot
           width={900}
           height={500}
-          tickSize={1}
+          xDomain={[1, 31]}
+          yDomain={[24, 0]}
         >
-          <XAxis />
+          <XAxis/>
           <YAxis />
           <DiscreteColorLegend items={legendItems} orientation="horizontal"/>
           <HeatmapSeries
-            className="heatmap-series-example"
-            data={data}
-            colorType="literal"
-            onValueMouseOver={this._rememberValue}
-            onValueMouseOut={this._forgetValue}
-          />
-          {value ?
-           <Hint value={hintValue}/> :
-           null
-          }
+          className="heatmap-series-example"
+          data={data}
+                colorType="literal"
+                onValueMouseOver={this._rememberValue}
+                onValueMouseOut={this._forgetValue}
+              />
+              {value ?
+               <Hint value={hintValue}/> :
+               null
+              }
         </XYPlot>
       </div>
     );
