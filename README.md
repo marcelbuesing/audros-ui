@@ -1,0 +1,3 @@
+# Audros
+
+A UI for sensors providing views for temperature, barometric pressure, humidty ...
