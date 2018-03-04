@@ -14,7 +14,7 @@ const hours = Array.from({length: 24}, (v, i) => i);
 const testData = days.reduce((acc, d) => {
   const rand = randomTemp();
   const v = hours.map(h => {
-    const temp = h < 12 ? rand + h : rand - (h - 11);
+    const temp = h < 12 ? rand - (12 -h) : rand - Math.abs(h - 12);
     const rangeTemp = Math.min(40, Math.max(-50, temp));
     return {x: d, y: h, temperature: rangeTemp };
   });
