@@ -113,20 +113,20 @@ class App extends Component {
           xDomain={[1, 31]}
           yDomain={[24, 0]}
         >
-          <XAxis/>
-          <YAxis />
+          <XAxis title="day"/>
+          <YAxis title="hour"  tickFormat={v => v + ":00"}/>
           <DiscreteColorLegend items={legendItems} orientation="horizontal"/>
           <HeatmapSeries
-          className="heatmap-series-example"
-          data={data}
-                colorType="literal"
-                onValueMouseOver={this._rememberValue}
-                onValueMouseOut={this._forgetValue}
-              />
-              {value ?
-               <Hint value={hintValue}/> :
-               null
-              }
+            className="heatmap-series-example"
+            data={data}
+            colorType="literal"
+            onValueMouseOver={this._rememberValue}
+            onValueMouseOut={this._forgetValue}
+          />
+          {value ?
+           <Hint value={hintValue}/> :
+           null
+          }
         </XYPlot>
       </div>
     );
